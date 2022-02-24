@@ -94,16 +94,16 @@ function Form() {
               </ContentContainer>
               <BottomButtons>
                 <BasicButton
-                  text={t('general.cancel')}
-                  onClick={() => console.log('Aun nada!')}
-                  backgroundColor="transparent"
-                  color="black"
-                />
-                <BasicButton
                   text={t('general.next')}
                   type={'submit'}
                   backgroundColor="#002B45"
                   color="white"
+                />
+                <BasicButton
+                  text={t('general.cancel')}
+                  onClick={() => console.log('Aun nada!')}
+                  backgroundColor="transparent"
+                  color="black"
                 />
               </BottomButtons>
             </>

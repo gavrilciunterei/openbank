@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import BasicButton from '../../components/BasicButton';
-import { TextContainer, ImageContainer, Image } from './styles';
+import { TextContainer, ImageContainer } from './styles';
 import { useNavigate } from 'react-router-dom';
 import userSlice from '../../data/user';
 import { RootStateOrAny, useDispatch, useSelector } from 'react-redux';
@@ -13,6 +13,7 @@ import BottomButtons from '../../components/BottomButtons';
 import Checkbox from '@mui/material/Checkbox';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import TextCreatePassword from '../../components/TextCreatePassword';
+import ImageCursom from '../../components/ImageCursom';
 
 function ProductInformation() {
   const { t } = useTranslation();
@@ -43,13 +44,23 @@ function ProductInformation() {
       <ContentContainer>
         <TextContainer flexDirectionMin="column" flexDirectionMax="row">
           <ImageContainer>
-            <Image src={img1} alt="img1" />
+            <ImageCursom
+              src={img1}
+              alt="img1"
+              maxHeight="150px"
+              maxWidth="150px"
+            />
             <Text maxWidth="300px">
               {t('product_information.text_save_password')}
             </Text>
           </ImageContainer>
           <ImageContainer>
-            <Image src={img2} alt="img2" />
+            <ImageCursom
+              src={img2}
+              alt="img2"
+              maxHeight="150px"
+              maxWidth="150px"
+            />
             <Text maxWidth="300px">
               {t('product_information.text_master_password')}
             </Text>
@@ -79,17 +90,17 @@ function ProductInformation() {
       </ContentContainer>
       <BottomButtons>
         <BasicButton
-          text={t('general.cancel')}
-          onClick={() => console.log('Aun nada!')}
-          backgroundColor="transparent"
-          color="black"
-        />
-        <BasicButton
           text={t('general.next')}
           onClick={() => handleNextPage()}
           backgroundColor="#002B45"
           color="white"
           disabled={!policyChecked}
+        />
+        <BasicButton
+          text={t('general.cancel')}
+          onClick={() => console.log('Aun nada!')}
+          backgroundColor="transparent"
+          color="black"
         />
       </BottomButtons>
     </div>
