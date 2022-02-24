@@ -77,14 +77,18 @@ function Feedback() {
       <ContentContainer>
         {!responseApi ? <LinearProgress /> : getContentApi()}
       </ContentContainer>
-      <BottomButtons>
-        <BasicButton
-          text={responseApi === 200 ? 'Acceder ⟩' : 'Volver a Password Manager'}
-          onClick={() => navigate(-1)}
-          backgroundColor="transparent"
-          color="black"
-        />
-      </BottomButtons>
+      {responseApi && (
+        <BottomButtons>
+          <BasicButton
+            text={
+              responseApi === 200 ? 'Acceder ⟩' : 'Volver a Password Manager'
+            }
+            onClick={() => navigate(-1)}
+            backgroundColor="transparent"
+            color="black"
+          />
+        </BottomButtons>
+      )}
     </div>
   );
 }
