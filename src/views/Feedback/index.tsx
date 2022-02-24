@@ -8,7 +8,7 @@ function Feedback() {
   const navigate = useNavigate();
 
   const dispatch = useDispatch();
-  const { password, repeatPassword, track } = useSelector(
+  const { password, repeatPassword, track, policyChecked } = useSelector(
     (state: RootStateOrAny) => state.user
   );
 
@@ -23,8 +23,15 @@ function Feedback() {
     <div>
       <h1>Hola desde feedback</h1>
       <h2>
-        Me llega por redux:
-        {password + ' // ' + repeatPassword + ' // ' + track}
+        Me llega por redux: [password:
+        {password +
+          ' ] // [repeatPassword:' +
+          repeatPassword +
+          '] // [track:' +
+          track +
+          '] // [policyChecked:' +
+          policyChecked +
+          ']'}
       </h2>
     </div>
   );

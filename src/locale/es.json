@@ -1,11 +1,33 @@
 {
+  "general": {
+    "next": "Siguiente",
+    "cancel": "Cancelar",
+    "create_password": "Crea tu Password Manager"
+  },
   "product_information": {
-    "create_password": "Crea tu Password Manager",
     "text_save_password": "Guarda aquí todas tus contraseñas, datos o cualquier información, olvida las notas de papel y las aplicaciones no protegidas.",
     "text_master_password": "Crea tu clave maestra: solo tú podrás acceder a tus secretos con ella.",
     "how_does_word": "Cómo funciona",
     "text_first_place": "En primer lugar, debes crear una contraseña diferente para sus pertenencias electrónicas. No podrás recuperar tu contraseña, así que recúerdala bien.",
     "what_data_save": "Qué datos puedes guardar",
-    "text_what_data_save": "Por ejemplo, el número de tu tarjeta, el PIN y el PUK de tu teléfono móvil, el número de serie de alguno de tus dispositivos o cualquier información que necesites tener en lugar seguro."
+    "text_what_data_save": "Por ejemplo, el número de tu tarjeta, el PIN y el PUK de tu teléfono móvil, el número de serie de alguno de tus dispositivos o cualquier información que necesites tener en lugar seguro.",
+    "data_protection_policy": "Soy mayor de edad y acepto el tratamiento de datos según la política de protección de datos."
+  },
+  "form": {
+    "first_step": "En primer lugar, debes crear una contraseña diferente para sus pertenencias electrónicas.",
+    "first_step_secound": "No podrás recuperar tu contraseña, así que recuérdala bien.",
+    "no_password": "No se proporcionó contraseña.",
+    "password_short": "La contraseña es demasiado corta; debe tener un mínimo de 8 caracteres.",
+    "password_max": "La contraseña es demasiado larga; debe tener un máximo de 24 caracteres.",
+    "password_num_upper": "La contraseña debe tener una mayúscula y un número",
+    "password_match": "Las contraseñas deben coincidir",
+    "create_master_pass": "Crea tu Contraseña Maestra",
+    "write_password": "Escribe tu contraseña",
+    "repeat_master_password": "Repite tu Contraseña Maestra",
+    "repeat_password": "Repite tu contraseña",
+    "secound_step": "También puedes crear una pista que te ayude a recordar tu contraseña maestra.",
+    "create_track": "Crea tu pista para recordar tu contraseña (opcional)",
+    "insert_trak": "Introduce tu pista",
+    "track_max": "La pista solo puede tener un máximo de 60 caracteres"
   }
 }

@@ -74,18 +74,18 @@ function ProductInformation() {
           control={
             <Checkbox checked={policyChecked} onChange={handleOnChange} />
           }
-          label="Soy mayor de edad y acepto el tratamiento de datos según la política de protección de datos"
+          label={t<string>('product_information.data_protection_policy')}
         />
       </ContentContainer>
       <BottomButtons>
         <BasicButton
-          text={'Cancel'}
-          onClick={() => handleNextPage()}
+          text={t('general.cancel')}
+          onClick={() => console.log('Aun nada!')}
           backgroundColor="transparent"
           color="black"
         />
         <BasicButton
-          text={'Siguiente'}
+          text={t('general.next')}
           onClick={() => handleNextPage()}
           backgroundColor="#002B45"
           color="white"

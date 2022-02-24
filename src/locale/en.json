@@ -1,4 +1,9 @@
 {
+  "general": {
+    "next": "Next",
+    "cancel": "Cancel",
+    "create_password": "Create your Password Manager"
+  },
   "product_information": {
     "create_password": "Create your Password Manager",
     "text_save_password": "Store all your passwords, data or any information here, forget paper notes and unprotected applications.",
@@ -6,6 +11,24 @@
     "how_does_word": "How does it work",
     "text_first_place": "First of all, you need to create a different password for your electronic belongings. You will not be able to recover your password, so remember it well.",
     "what_data_save": "What data can you save",
-    "text_what_data_save": "For example, your card number, the PIN and PUK of your mobile phone, the serial number of one of your devices or any information you need to have in a safe place."
+    "text_what_data_save": "For example, your card number, the PIN and PUK of your mobile phone, the serial number of one of your devices or any information you need to have in a safe place.",
+    "data_protection_policy": "I am of legal age and I accept the processing of data according to the data protection policy."
+  },
+  "form": {
+    "first_step": "First of all, you need to create a different password for your electronic belongings.",
+    "first_step_secound": "You will not be able to recover your password, so remember it well.",
+    "no_password": "No password provided.",
+    "password_short": "Password is too short; should be 8 characters minimum.",
+    "password_max": "Password is too long; should be 24 characters max.",
+    "password_num_upper": "Password must have one uppercase and one number",
+    "password_match": "Passwords must match",
+    "create_master_pass": "Create your Master Password",
+    "write_password": "Enter your password",
+    "repeat_master_password": "Repeat your Master Password",
+    "repeat_password": "Repeat your password",
+    "secound_step": "You can also create a hint to help you remember your master password.",
+    "create_track": "Create your hint to remember your password (optional)",
+    "insert_trak": "Enter your hint",
+    "track_max": "The hint can only have a maximum of 60 characters"
   }
 }

@@ -13,6 +13,7 @@ import FormSchema from './validator';
 import TextField from '@mui/material/TextField';
 import * as Yup from 'yup';
 import InputSimple from '../../components/InputSimple';
+import { TwoInputs } from './styles';
 
 function Form() {
   const navigate = useNavigate();
@@ -50,48 +51,57 @@ function Form() {
         }}
         validationSchema={Yup.object({
           password: Yup.string()
-            .required('No password provided.')
-            .min(8, 'Password is too short - should be 8 chars minimum.')
-            .matches(/[a-zA-Z]/, 'Password can only contain Latin letters.'),
+            .required(t('form.no_password'))
+            .min(8, t('form.password_short'))
+            .max(24, t('form.password_max'))
+            .matches(/(?=.*[A-Z])(?=.*[\d])/, t('form.password_num_upper')),
           repeatPassword: Yup.string()
             .required()
-            .oneOf([Yup.ref('password'), null], 'Passwords must match'),
-          track: Yup.string().optional(),
+            .oneOf([Yup.ref('password'), null], t('form.password_match')),
+          track: Yup.string().optional().max(60, t('form.track_max')),
         })}
       >
         {(formik) => (
           <FormFormik>
             <>
               <ContentContainer>
-                <InputSimple
-                  label="Password"
-                  name="password"
-                  placeholder="Escribe tu pass"
-                  type="password"
-                />
-                <InputSimple
-                  label="Repeat your Password"
-                  name="repeatPassword"
-                  placeholder="Repite tu pass"
-                  type="password"
-                />
+                <Text>
+                  {t('form.first_step')} <br /> {t('form.first_step_secound')}
+                </Text>
+
+                <TwoInputs>
+                  <InputSimple
+                    label={t('form.create_master_pass')}
+                    name="password"
+                    placeholder={t('form.write_password')}
+                    type="password"
+                  />
+                  <InputSimple
+                    label={t('form.repeat_master_password')}
+                    name="repeatPassword"
+                    placeholder={t('form.repeat_password')}
+                    type="password"
+                  />
+                </TwoInputs>
+
+                <Text>{t('form.secound_step')}</Text>
 
                 <InputSimple
-                  label="Crea tu pista para recordar tu contraseña (opcional)"
+                  label={t('form.create_track')}
                   name="track"
-                  placeholder="Introduce tu pista"
+                  placeholder={t('form.insert_trak')}
                   type="text"
                 />
               </ContentContainer>
               <BottomButtons>
                 <BasicButton
-                  text={'Cancel'}
-                  onClick={() => handleNextPage()}
+                  text={t('general.cancel')}
+                  onClick={() => console.log('Aun nada!')}
                   backgroundColor="transparent"
                   color="black"
                 />
                 <BasicButton
-                  text={'Siguiente'}
+                  text={t('general.next')}
                   type={'submit'}
                   backgroundColor="#002B45"
                   color="white"
@@ -101,32 +111,6 @@ function Form() {
           </FormFormik>
         )}
       </Formik>
-
-      {/* <form onSubmit={handleSubmit} noValidate>
-        <ContentContainer>
-          <InputSimple
-            label="Email Address"
-            name="email"
-            placeholder="jonh@google.com"
-            type="email"
-          />
-        </ContentContainer>
-        <BottomButtons>
-          <BasicButton
-            text={'Cancel'}
-            onClick={() => handleNextPage()}
-            backgroundColor="transparent"
-            color="black"
-          />
-          <BasicButton
-            text={'Siguiente'}
-            type={'submit'}
-            backgroundColor="#002B45"
-            color="white"
-            //  disabled={!policyChecked}
-          />
-        </BottomButtons>
-      </form> */}
     </div>
   );
 }

@@ -1,6 +1,5 @@
 import React from 'react';
-import { TextStyled } from './styles';
-import { TextProps } from './types';
+import { InputContainer, InputLabel } from './styles';
 import { ErrorMessage, useField } from 'formik';
 
 interface Props {
@@ -15,11 +14,20 @@ function InputSimple({ label, ...props }: Props) {
   const [field] = useField(props);
 
   return (
-    <div>
-      <label htmlFor={props.id || props.name}>{label}</label>
+    <InputContainer>
+      <InputLabel htmlFor={props.id || props.name}>{label}</InputLabel>
       <input className="text-input" {...field} {...props} />
-      <ErrorMessage name={props.name} component="span" />
-    </div>
+      <div
+        style={{
+          maxWidth: 200,
+          fontSize: 13,
+          fontWeight: 'lighter',
+          color: 'red',
+        }}
+      >
+        <ErrorMessage name={props.name} component="span" />
+      </div>
+    </InputContainer>
   );
 }
 

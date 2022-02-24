@@ -9,7 +9,7 @@ function TextCreatePassword() {
   return (
     <ContentContainer>
       <Text fontWeight={500} size="30px">
-        {t('product_information.create_password')}
+        {t('general.create_password')}
       </Text>
       <BottomLine />
     </ContentContainer>
