@@ -1,29 +1,31 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+const initialState = {
+  activePage: 0,
+  policyChecked: false,
+  pages: [
+    {
+      done: false,
+      text: '1',
+    },
+    {
+      done: false,
+      text: '2',
+    },
+    {
+      done: false,
+      text: '3',
+    },
+  ],
+  password: '',
+  repeatPassword: '',
+  track: '',
+  responseApi: null,
+};
+
 const userSlice = createSlice({
   name: 'user',
-  initialState: {
-    activePage: 0,
-    policyChecked: false,
-    pages: [
-      {
-        done: false,
-        text: '1',
-      },
-      {
-        done: false,
-        text: '2',
-      },
-      {
-        done: false,
-        text: '3',
-      },
-    ],
-    password: '',
-    repeatPassword: '',
-    track: '',
-    responseApi: null,
-  },
+  initialState,
   reducers: {
     setActivePage(state, action) {
       state.activePage = action.payload;
@@ -47,6 +49,7 @@ const userSlice = createSlice({
     setResponseApi(state, action) {
       state.responseApi = action.payload;
     },
+    cleanData: () => initialState,
   },
 });
 

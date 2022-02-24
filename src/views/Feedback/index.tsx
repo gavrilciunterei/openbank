@@ -23,7 +23,8 @@ function Feedback() {
   const { password, repeatPassword, track, policyChecked, responseApi } =
     useSelector((state: RootStateOrAny) => state.user);
 
-  const { setActivePage, setResponseApi, setDonePage } = userSlice.actions;
+  const { setActivePage, setResponseApi, setDonePage, cleanData } =
+    userSlice.actions;
 
   useEffect(() => {
     if (password && repeatPassword && policyChecked) {
@@ -75,6 +76,11 @@ function Feedback() {
     }
   }, [dispatch, responseApi]);
 
+  const handleRestartForm = () => {
+    dispatch(cleanData());
+    navigate('/');
+  };
+
   return (
     <div style={{ flex: 1 }}>
       <ContentContainer>
@@ -86,7 +92,9 @@ function Feedback() {
             text={
               responseApi === 200 ? 'Acceder ⟩' : 'Volver a Password Manager'
             }
-            onClick={() => (responseApi === 200 ? navigate('/') : navigate(-1))}
+            onClick={() =>
+              responseApi === 200 ? handleRestartForm() : navigate(-1)
+            }
             backgroundColor="transparent"
             color="black"
           />
