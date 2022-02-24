@@ -8,6 +8,7 @@ function BasicButton({
   backgroundColor,
   color,
   disabled,
+  type,
 }: BasicButtonProps) {
   return (
     <Button
@@ -15,6 +16,7 @@ function BasicButton({
       backgroundColor={backgroundColor}
       color={color}
       disabled={disabled}
+      type={type ? type : 'button'}
     >
       {text}
     </Button>

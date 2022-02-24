@@ -12,6 +12,7 @@ import ContentContainer from '../../components/ContentContainer';
 import BottomButtons from '../../components/BottomButtons';
 import Checkbox from '@mui/material/Checkbox';
 import FormControlLabel from '@mui/material/FormControlLabel';
+import TextCreatePassword from '../../components/TextCreatePassword';
 
 function ProductInformation() {
   const { t } = useTranslation();
@@ -38,11 +39,8 @@ function ProductInformation() {
 
   return (
     <div style={{ flex: 1 }}>
+      <TextCreatePassword />
       <ContentContainer>
-        <Text fontWeight={500} size="30px">
-          {t('product_information.create_password')}
-        </Text>
-
         <TextContainer flexDirectionMin="column" flexDirectionMax="row">
           <ImageContainer>
             <Image src={img1} alt="img1" />

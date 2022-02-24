@@ -39,6 +39,9 @@ const userSlice = createSlice({
         text: '3',
       },
     ],
+    password: '',
+    repeatPassword: '',
+    track: '',
   },
   reducers: {
     setActivePage(state, action) {
@@ -54,6 +57,11 @@ const userSlice = createSlice({
     },
     setCheckPolicy(state, action) {
       state.policyChecked = action.payload;
+    },
+    setPassword(state, action) {
+      state.password = action.payload.password;
+      state.repeatPassword = action.payload.repeatPassword;
+      state.track = action.payload.track;
     },
   },
   extraReducers: {

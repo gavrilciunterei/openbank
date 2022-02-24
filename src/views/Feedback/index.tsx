@@ -1,13 +1,16 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import userSlice from '../../data/user';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch, RootStateOrAny } from 'react-redux';
 import BasicButton from '../../components/BasicButton';
 
 function Feedback() {
   const navigate = useNavigate();
 
   const dispatch = useDispatch();
+  const { password, repeatPassword, track } = useSelector(
+    (state: RootStateOrAny) => state.user
+  );
 
   const { setActivePage } = userSlice.actions;
 
@@ -19,6 +22,10 @@ function Feedback() {
   return (
     <div>
       <h1>Hola desde feedback</h1>
+      <h2>
+        Me llega por redux:
+        {password + ' // ' + repeatPassword + ' // ' + track}
+      </h2>
     </div>
   );
 }
