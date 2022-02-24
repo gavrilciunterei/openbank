@@ -12,7 +12,6 @@ interface Props {
 
 function InputSimple({ label, ...props }: Props) {
   const [field, meta] = useField(props);
-  console.log(meta.error);
   return (
     <InputContainer>
       <InputLabel htmlFor={props.id || props.name}>{label}</InputLabel>

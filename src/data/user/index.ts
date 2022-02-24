@@ -1,24 +1,4 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-
-export const getAll = createAsyncThunk(
-  'user/getAll',
-  async (data, { rejectWithValue }) => {
-    try {
-      //const allCharacters = await Characters.getAll(data.serie);
-      return 'ok';
-    } catch (err) {
-      let errorMessage;
-      if (err.status === 404) {
-        errorMessage = 'NOT_FOUND';
-      } else if (err) {
-        errorMessage = 'BAD_REQUEST';
-      }
-      return rejectWithValue({
-        error: errorMessage,
-      });
-    }
-  }
-);
+import { createSlice } from '@reduxjs/toolkit';
 
 const userSlice = createSlice({
   name: 'user',
@@ -42,6 +22,7 @@ const userSlice = createSlice({
     password: '',
     repeatPassword: '',
     track: '',
+    responseApi: null,
   },
   reducers: {
     setActivePage(state, action) {
@@ -63,20 +44,8 @@ const userSlice = createSlice({
       state.repeatPassword = action.payload.repeatPassword;
       state.track = action.payload.track;
     },
-  },
-  extraReducers: {
-    [getAll.pending]: (state) => {
-      state.getAllLoading = true;
-      state.getAllError = null;
-    },
-    [getAll.fulfilled]: (state, action) => {
-      state.allCharacters = action.payload.data;
-      state.getAllLoading = false;
-      state.getAllError = null;
-    },
-    [getAll.rejected]: (state, action) => {
-      state.getAllLoading = false;
-      state.getAllError = action.payload.error;
+    setResponseApi(state, action) {
+      state.responseApi = action.payload;
     },
   },
 });

@@ -2,10 +2,10 @@ import styled from 'styled-components';
 import { StepCircleProps, StepLineProps } from './types';
 
 const getBgColor = (props: StepCircleProps) => {
-  if (props.isActive) {
-    return '#00314F';
-  } else if (props.isDone) {
+  if (props.isDone) {
     return '#EC0056';
+  } else if (props.isActive) {
+    return '#00314F';
   }
 
   return '#7F9AA7';

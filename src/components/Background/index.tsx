@@ -13,7 +13,7 @@ import { BackgroundProps } from './types';
 import { RootStateOrAny, useSelector } from 'react-redux';
 import { Page } from '../../data/user/types';
 function Background({ children }: BackgroundProps) {
-  const { activePage, pages } = useSelector(
+  const { activePage, pages, responseApi } = useSelector(
     (state: RootStateOrAny) => state.user
   );
 
