@@ -22,7 +22,8 @@ function Form() {
   const dispatch = useDispatch();
 
   const { policyChecked } = useSelector((state: RootStateOrAny) => state.user);
-  const { setActivePage, setDonePage, setPassword } = userSlice.actions;
+  const { setActivePage, setDonePage, setPassword, cleanData } =
+    userSlice.actions;
 
   useEffect(() => {
     if (policyChecked) {
@@ -37,6 +38,11 @@ function Form() {
   const handleNextPage = () => {
     dispatch(setDonePage({ done: true, page: 1 }));
     navigate('/feedback');
+  };
+
+  const handleRestartForm = () => {
+    dispatch(cleanData());
+    navigate('/');
   };
 
   return (
@@ -106,7 +112,7 @@ function Form() {
                 />
                 <BasicButton
                   text={t('general.cancel')}
-                  onClick={() => console.log('Aun nada!')}
+                  onClick={() => handleRestartForm()}
                   backgroundColor="transparent"
                   color="black"
                 />

@@ -2,7 +2,9 @@
   "general": {
     "next": "Next",
     "cancel": "Cancel",
-    "create_password": "Create your Password Manager"
+    "create_password": "Create your Password Manager",
+    "es": "Spanish",
+    "en": "English"
   },
   "product_information": {
     "create_password": "Create your Password Manager",

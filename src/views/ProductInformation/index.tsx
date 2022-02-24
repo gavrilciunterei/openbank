@@ -14,7 +14,7 @@ import Checkbox from '@mui/material/Checkbox';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import TextCreatePassword from '../../components/TextCreatePassword';
 import ImageCursom from '../../components/ImageCursom';
-
+import { BiChevronRight } from 'react-icons/bi';
 function ProductInformation() {
   const { t } = useTranslation();
   const navigate = useNavigate();
@@ -95,6 +95,7 @@ function ProductInformation() {
           backgroundColor="#002B45"
           color="white"
           disabled={!policyChecked}
+          icon={<BiChevronRight size={20} />}
         />
         <BasicButton
           text={t('general.cancel')}

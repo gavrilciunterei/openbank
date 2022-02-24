@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from './styles';
+import { Button, ButtonDiv } from './styles';
 import { BasicButtonProps } from './types';
 
 function BasicButton({
@@ -9,6 +9,7 @@ function BasicButton({
   color,
   disabled,
   type,
+  icon,
 }: BasicButtonProps) {
   return (
     <Button
@@ -18,7 +19,10 @@ function BasicButton({
       disabled={disabled}
       type={type ? type : 'button'}
     >
-      {text}
+      <ButtonDiv>
+        {text}
+        {icon}
+      </ButtonDiv>
     </Button>
   );
 }

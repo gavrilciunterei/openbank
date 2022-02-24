@@ -2,7 +2,9 @@
   "general": {
     "next": "Siguiente",
     "cancel": "Cancelar",
-    "create_password": "Crea tu Password Manager"
+    "create_password": "Crea tu Password Manager",
+    "es": "Español",
+    "en": "Inglés"
   },
   "product_information": {
     "text_save_password": "Guarda aquí todas tus contraseñas, datos o cualquier información, olvida las notas de papel y las aplicaciones no protegidas.",
