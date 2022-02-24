@@ -1,0 +1,11 @@
+{
+  "product_information": {
+    "create_password": "Create your Password Manager",
+    "text_save_password": "Store all your passwords, data or any information here, forget paper notes and unprotected applications.",
+    "text_master_password": "Create your master key: only you can access your secrets with it.",
+    "how_does_word": "How does it work",
+    "text_first_place": "First of all, you need to create a different password for your electronic belongings. You will not be able to recover your password, so remember it well.",
+    "what_data_save": "What data can you save",
+    "text_what_data_save": "For example, your card number, the PIN and PUK of your mobile phone, the serial number of one of your devices or any information you need to have in a safe place."
+  }
+}
