@@ -56,7 +56,7 @@ function Form() {
             .max(24, t('form.password_max'))
             .matches(/(?=.*[A-Z])(?=.*[\d])/, t('form.password_num_upper')),
           repeatPassword: Yup.string()
-            .required()
+            .required(t('form.repeat_required'))
             .oneOf([Yup.ref('password'), null], t('form.password_match')),
           track: Yup.string().optional().max(60, t('form.track_max')),
         })}
@@ -68,7 +68,6 @@ function Form() {
                 <Text>
                   {t('form.first_step')} <br /> {t('form.first_step_secound')}
                 </Text>
-
                 <TwoInputs>
                   <InputSimple
                     label={t('form.create_master_pass')}

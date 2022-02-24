@@ -7,7 +7,7 @@ export const TextContainer = styled.div<TextContainerProps>`
   margin-top: 15px;
   flex-direction: ${(props) =>
     props.flexDirectionMin ? props.flexDirectionMin : 'row'};
-  @media (min-width: 809px) {
+  @media (min-width: 850px) {
     flex-direction: ${(props) =>
       props.flexDirectionMax ? props.flexDirectionMax : 'row'};
   }
@@ -19,6 +19,7 @@ export const ImageContainer = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
+  margin-right: 10px;
 `;
 
 export const Image = styled.img`

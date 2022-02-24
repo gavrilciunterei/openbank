@@ -28,6 +28,7 @@
     "secound_step": "También puedes crear una pista que te ayude a recordar tu contraseña maestra.",
     "create_track": "Crea tu pista para recordar tu contraseña (opcional)",
     "insert_trak": "Introduce tu pista",
-    "track_max": "La pista solo puede tener un máximo de 60 caracteres"
+    "track_max": "La pista solo puede tener un máximo de 60 caracteres",
+    "repeat_required": "Repetir la contraseña es obligatorio"
   }
 }

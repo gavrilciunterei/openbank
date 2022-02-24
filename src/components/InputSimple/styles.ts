@@ -1,3 +1,4 @@
+import { TextField } from '@mui/material';
 import styled from 'styled-components';
 import { StyeProps } from './types';
 
@@ -11,3 +12,5 @@ export const InputContainer = styled.div`
 export const InputLabel = styled.label`
   margin-top: 0;
 `;
+
+export const ValidationTextField = styled(TextField)({});

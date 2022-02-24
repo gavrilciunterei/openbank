@@ -29,6 +29,7 @@
     "secound_step": "You can also create a hint to help you remember your master password.",
     "create_track": "Create your hint to remember your password (optional)",
     "insert_trak": "Enter your hint",
-    "track_max": "The hint can only have a maximum of 60 characters"
+    "track_max": "The hint can only have a maximum of 60 characters",
+    "repeat_required": "Repeat password is required"
   }
 }

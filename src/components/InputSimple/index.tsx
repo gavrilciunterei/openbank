@@ -1,5 +1,5 @@
 import React from 'react';
-import { InputContainer, InputLabel } from './styles';
+import { InputContainer, InputLabel, ValidationTextField } from './styles';
 import { ErrorMessage, useField } from 'formik';
 
 interface Props {
@@ -11,12 +11,12 @@ interface Props {
 }
 
 function InputSimple({ label, ...props }: Props) {
-  const [field] = useField(props);
-
+  const [field, meta] = useField(props);
+  console.log(meta.error);
   return (
     <InputContainer>
       <InputLabel htmlFor={props.id || props.name}>{label}</InputLabel>
-      <input className="text-input" {...field} {...props} />
+      <ValidationTextField className="text-input" {...field} {...props} />
       <div
         style={{
           maxWidth: 200,
