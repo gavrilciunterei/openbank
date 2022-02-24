@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import userSlice from '../../data/user';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch, RootStateOrAny } from 'react-redux';
 import BasicButton from '../../components/BasicButton';
 import ContentContainer from '../../components/ContentContainer';
 import Text from '../../components/Text';
@@ -21,12 +21,17 @@ function Form() {
 
   const dispatch = useDispatch();
 
+  const { policyChecked } = useSelector((state: RootStateOrAny) => state.user);
   const { setActivePage, setDonePage, setPassword } = userSlice.actions;
 
   useEffect(() => {
-    // No olvidar de limpiar estados(por si le da a la flecha del navegador adelante y atras no le salga que ok y le lleve a home)
-    dispatch(setDonePage({ done: false, page: 1 }));
-    dispatch(setActivePage(1));
+    if (policyChecked) {
+      // No olvidar de limpiar estados(por si le da a la flecha del navegador adelante y atras no le salga que ok y le lleve a home)
+      dispatch(setDonePage({ done: false, page: 1 }));
+      dispatch(setActivePage(1));
+    } else {
+      navigate('/');
+    }
   }, []);
 
   const handleNextPage = () => {

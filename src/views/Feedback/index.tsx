@@ -20,17 +20,20 @@ function Feedback() {
   const { t } = useTranslation();
 
   const dispatch = useDispatch();
-  const { password, repeatPassword, track, responseApi } = useSelector(
-    (state: RootStateOrAny) => state.user
-  );
+  const { password, repeatPassword, track, policyChecked, responseApi } =
+    useSelector((state: RootStateOrAny) => state.user);
 
   const { setActivePage, setResponseApi, setDonePage } = userSlice.actions;
 
   useEffect(() => {
-    dispatch(setActivePage(2));
-    submitForm(password, repeatPassword, track)
-      .then((res) => dispatch(setResponseApi(res.status)))
-      .catch((e) => dispatch(setResponseApi(e.status)));
+    if (password && repeatPassword && policyChecked) {
+      dispatch(setActivePage(2));
+      submitForm(password, repeatPassword, track)
+        .then((res) => dispatch(setResponseApi(res.status)))
+        .catch((e) => dispatch(setResponseApi(e.status)));
+    } else {
+      navigate('/');
+    }
   }, []);
 
   const getContentApi = () => {
@@ -83,7 +86,7 @@ function Feedback() {
             text={
               responseApi === 200 ? 'Acceder ⟩' : 'Volver a Password Manager'
             }
-            onClick={() => navigate(-1)}
+            onClick={() => (responseApi === 200 ? navigate('/') : navigate(-1))}
             backgroundColor="transparent"
             color="black"
           />
