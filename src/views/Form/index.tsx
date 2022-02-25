@@ -22,17 +22,19 @@ function Form() {
 
   const dispatch = useDispatch();
 
-  const { policyChecked } = useSelector((state: RootStateOrAny) => state.user);
+  const { policyChecked, responseApi } = useSelector(
+    (state: RootStateOrAny) => state.user
+  );
   const { setActivePage, setDonePage, setPassword, cleanData } =
     userSlice.actions;
 
   useEffect(() => {
-    if (policyChecked) {
+    if (policyChecked && responseApi !== 200) {
       // No olvidar de limpiar estados(por si le da a la flecha del navegador adelante y atras no le salga que ok y le lleve a home)
       dispatch(setDonePage({ done: false, page: 1 }));
       dispatch(setActivePage(1));
     } else {
-      navigate('/');
+      handleRestartForm();
     }
   }, []);
 

@@ -24,10 +24,16 @@ function Feedback() {
   const { password, repeatPassword, track, policyChecked, responseApi } =
     useSelector((state: RootStateOrAny) => state.user);
 
-  const { setActivePage, setResponseApi, setDonePage, cleanData } =
-    userSlice.actions;
+  const {
+    setActivePage,
+    setResponseApi,
+    setDonePage,
+    cleanData,
+    resetPassword,
+  } = userSlice.actions;
 
   useEffect(() => {
+    console.log('se ejecuta');
     if (password && repeatPassword && policyChecked) {
       dispatch(setActivePage(2));
       submitForm(password, repeatPassword, track)
@@ -80,6 +86,11 @@ function Feedback() {
     navigate('/');
   };
 
+  const handleGoBack = () => {
+    dispatch(resetPassword());
+    navigate(-1);
+  };
+
   return (
     <div style={{ flex: 1 }}>
       <ContentContainer>
@@ -94,7 +105,7 @@ function Feedback() {
                 : t('feedback.error_goback')
             }
             onClick={() =>
-              responseApi === 200 ? handleRestartForm() : navigate(-1)
+              responseApi === 200 ? handleRestartForm() : handleGoBack()
             }
             backgroundColor="transparent"
             color="#EC0056"

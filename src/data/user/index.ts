@@ -50,6 +50,12 @@ const userSlice = createSlice({
       state.responseApi = action.payload;
     },
     cleanData: () => initialState,
+    resetPassword: (state) => {
+      state.password = '';
+      state.repeatPassword = '';
+      state.track = '';
+      state.responseApi = null;
+    },
   },
 });
 
