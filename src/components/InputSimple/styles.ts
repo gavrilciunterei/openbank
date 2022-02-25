@@ -1,6 +1,5 @@
-import { TextField } from '@mui/material';
 import styled from 'styled-components';
-import { StyeProps } from './types';
+import { StyleProps } from './types';
 
 export const InputContainer = styled.div`
   display: flex;
@@ -13,4 +12,13 @@ export const InputLabel = styled.label`
   margin-top: 0;
 `;
 
-export const ValidationTextField = styled(TextField)({});
+export const ValidationTextField = styled.input<StyleProps>`
+  padding: 10px;
+  border-radius: 3px;
+  border-style: solid;
+  border-bottom-color: ${(props) => (props.color ? props.color : 'gray')};
+
+  :focus {
+    outline: none !important;
+  }
+`;

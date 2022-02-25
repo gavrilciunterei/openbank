@@ -1,12 +1,4 @@
-export type TextProps = {
-  children: React.ReactNode;
-  color?: string;
-  fontWeight?: number;
-  size?: string;
-  maxWidth?: string;
-};
-
-export type StyeProps = {
+export type StyleProps = {
   color?: string;
   fontWeight?: number;
   size?: string;

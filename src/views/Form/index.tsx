@@ -9,8 +9,6 @@ import Text from '../../components/Text';
 import TextCreatePassword from '../../components/TextCreatePassword';
 import BottomButtons from '../../components/BottomButtons';
 import { Formik, Form as FormFormik } from 'formik';
-import FormSchema from './validator';
-import TextField from '@mui/material/TextField';
 import * as Yup from 'yup';
 import InputSimple from '../../components/InputSimple';
 import { TwoInputs } from './styles';
@@ -88,6 +86,7 @@ function Form() {
                     name="password"
                     placeholder={t('form.write_password')}
                     type="password"
+                    password={true}
                   />
                   <InputSimple
                     label={t('form.repeat_master_password')}

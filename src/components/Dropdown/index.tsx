@@ -17,7 +17,7 @@ function Dropdown() {
     i18next.changeLanguage(language);
   };
 
-  function useOutsideAlerter(ref: any) {
+  function useOutsideAlerter(ref: React.RefObject<HTMLInputElement>) {
     useEffect(() => {
       /**
        * Alert if clicked on outside of element
