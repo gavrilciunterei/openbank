@@ -18,6 +18,16 @@ function InputSimple({ label, ...props }: Props) {
   const strength = strengthIndicator(field.value);
   const color = strengthColor(strength);
 
+  const getColor = () => {
+    if (props.password) {
+      return color;
+    } else if (meta.error) {
+      return 'red';
+    } else {
+      return '';
+    }
+  };
+
   return (
     <InputContainer>
       <InputLabel htmlFor={props.id || props.name}>{label}</InputLabel>
@@ -26,7 +36,7 @@ function InputSimple({ label, ...props }: Props) {
         className="text-input"
         {...field}
         {...props}
-        color={props.password ? color : ''}
+        color={getColor()}
       />
       <div
         style={{
