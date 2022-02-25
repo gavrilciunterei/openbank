@@ -1,7 +1,13 @@
 import React from 'react';
-import { InputContainer, InputLabel, ValidationTextField } from './styles';
+import {
+  InputContainer,
+  InputLabel,
+  SubTextContainer,
+  ValidationTextField,
+} from './styles';
 import { ErrorMessage, useField } from 'formik';
 import { strengthIndicator, strengthColor } from './strength';
+import Text from '../Text';
 
 interface Props {
   password?: boolean;
@@ -10,6 +16,7 @@ interface Props {
   type?: 'text' | 'email' | 'password';
   placeholder: string;
   [x: string]: any;
+  subText?: React.ReactNode;
 }
 
 function InputSimple({ label, ...props }: Props) {
@@ -38,16 +45,11 @@ function InputSimple({ label, ...props }: Props) {
         {...props}
         color={getColor()}
       />
-      <div
-        style={{
-          maxWidth: 200,
-          fontSize: 13,
-          fontWeight: 'lighter',
-          color: 'red',
-        }}
-      >
+
+      {props.subText && <SubTextContainer>{props.subText}</SubTextContainer>}
+      <Text color="red" fontWeight={300} size="13px" maxWidth="200">
         <ErrorMessage name={props.name} component="span" />
-      </div>
+      </Text>
     </InputContainer>
   );
 }

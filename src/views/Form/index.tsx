@@ -15,6 +15,7 @@ import { TwoInputs } from './styles';
 import { BiChevronRight } from 'react-icons/bi';
 import colors from '../../styles/colors';
 
+const MAX_TRACK = 60;
 function Form() {
   const navigate = useNavigate();
   const { t } = useTranslation();
@@ -71,7 +72,7 @@ function Form() {
           repeatPassword: Yup.string()
             .required(t('form.repeat_required'))
             .oneOf([Yup.ref('password'), null], t('form.password_match')),
-          track: Yup.string().optional().max(60, t('form.track_max')),
+          track: Yup.string().optional().max(MAX_TRACK, t('form.track_max')),
         })}
       >
         {(formik) => (
@@ -104,6 +105,11 @@ function Form() {
                   name="track"
                   placeholder={t('form.insert_trak')}
                   type="text"
+                  subText={
+                    <Text size="15px">
+                      {formik.values.track.length + '/' + MAX_TRACK}
+                    </Text>
+                  }
                 />
               </ContentContainer>
               <BottomButtons>

@@ -34,7 +34,6 @@ function Feedback() {
   } = userSlice.actions;
 
   useEffect(() => {
-    console.log('se ejecuta');
     if (password && repeatPassword && policyChecked) {
       dispatch(setActivePage(2));
       submitForm(password, repeatPassword, track)
