@@ -34,8 +34,7 @@ export const ButtonDiv = styled.div`
 export const LangButton = styled.button`
   background-color: transparent;
   border: 0;
-  border-color: black;
-  border-width: 1px;
-  border-style: solid;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+
   padding: 10px;
 `;

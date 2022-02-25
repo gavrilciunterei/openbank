@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import {
   DropdownContainer,
   Container,
@@ -17,13 +17,36 @@ function Dropdown() {
     i18next.changeLanguage(language);
   };
 
+  function useOutsideAlerter(ref: any) {
+    useEffect(() => {
+      /**
+       * Alert if clicked on outside of element
+       */
+      function handleClickOutside(event: any) {
+        if (ref.current && !ref.current.contains(event.target)) {
+          setOpenModal(false);
+        }
+      }
+
+      // Bind the event listener
+      document.addEventListener('mousedown', handleClickOutside);
+      return () => {
+        // Unbind the event listener on clean up
+        document.removeEventListener('mousedown', handleClickOutside);
+      };
+    }, [ref]);
+  }
+
+  const wrapperRef = useRef(null);
+  useOutsideAlerter(wrapperRef);
+
   return (
-    <Container>
+    <Container ref={wrapperRef}>
       <ButtonParent onClick={() => setOpenModal(!openModal)}>
         <ButtonDiv>
-          <BiWorld size={20} />
+          <BiWorld size={20} color="black" />
           {i18next.language}
-          <BiChevronDown size={20} />
+          <BiChevronDown size={20} color="black" />
         </ButtonDiv>
       </ButtonParent>
       {openModal && (
