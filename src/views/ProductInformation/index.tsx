@@ -15,6 +15,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import TextCreatePassword from '../../components/TextCreatePassword';
 import ImageCursom from '../../components/ImageCursom';
 import { BiChevronRight } from 'react-icons/bi';
+import InputCheckbox from '../../components/InputCheckbox';
 function ProductInformation() {
   const { t } = useTranslation();
   const navigate = useNavigate();
@@ -81,11 +82,11 @@ function ProductInformation() {
           <Text> {t('product_information.text_what_data_save')}</Text>
         </TextContainer>
 
-        <FormControlLabel
-          control={
-            <Checkbox checked={policyChecked} onChange={handleOnChange} />
-          }
-          label={t<string>('product_information.data_protection_policy')}
+        <InputCheckbox
+          name="isGoing"
+          checked={policyChecked}
+          handleOnChange={handleOnChange}
+          text={t<string>('product_information.data_protection_policy')}
         />
       </ContentContainer>
       <BottomButtons>
