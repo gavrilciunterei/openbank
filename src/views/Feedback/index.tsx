@@ -1,6 +1,12 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import userSlice from '../../data/user';
+import {
+  setActivePage,
+  setResponseApi,
+  setDonePage,
+  cleanData,
+  resetPassword,
+} from '../../data/user';
 import { useSelector, useDispatch, RootStateOrAny } from 'react-redux';
 
 import ContentContainer from '../../components/ContentContainer';
@@ -24,14 +30,6 @@ function Feedback() {
   const dispatch = useDispatch();
   const { password, repeatPassword, track, policyChecked, responseApi } =
     useSelector((state: RootStateOrAny) => state.user);
-
-  const {
-    setActivePage,
-    setResponseApi,
-    setDonePage,
-    cleanData,
-    resetPassword,
-  } = userSlice.actions;
 
   useEffect(() => {
     if (password && repeatPassword && policyChecked) {

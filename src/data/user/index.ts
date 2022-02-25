@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { User } from './types';
 
-const initialState = {
+export const initialState: User = {
   activePage: 0,
   policyChecked: false,
   pages: [
@@ -59,4 +60,13 @@ const userSlice = createSlice({
   },
 });
 
-export default userSlice;
+export const {
+  setActivePage,
+  setDonePage,
+  setCheckPolicy,
+  setPassword,
+  setResponseApi,
+  cleanData,
+  resetPassword,
+} = userSlice.actions;
+export default userSlice.reducer;

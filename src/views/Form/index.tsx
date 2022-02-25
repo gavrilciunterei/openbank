@@ -1,7 +1,12 @@
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
-import userSlice from '../../data/user';
+import {
+  setActivePage,
+  setDonePage,
+  setPassword,
+  cleanData,
+} from '../../data/user';
 import { useSelector, useDispatch, RootStateOrAny } from 'react-redux';
 import BasicButton from '../../components/BasicButton';
 import ContentContainer from '../../components/ContentContainer';
@@ -25,8 +30,6 @@ function Form() {
   const { policyChecked, responseApi } = useSelector(
     (state: RootStateOrAny) => state.user
   );
-  const { setActivePage, setDonePage, setPassword, cleanData } =
-    userSlice.actions;
 
   useEffect(() => {
     if (policyChecked && responseApi !== 200) {
