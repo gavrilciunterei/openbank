@@ -1,14 +1,15 @@
 import styled from 'styled-components';
 import { StepCircleProps, StepLineProps } from './types';
+import colors from '../../styles/colors';
 
 const getBgColor = (props: StepCircleProps) => {
   if (props.isDone) {
-    return '#EC0056';
+    return colors.primary_color;
   } else if (props.isActive) {
-    return '#00314F';
+    return colors.secondary_color;
   }
 
-  return '#7F9AA7';
+  return colors.terciary_color;
 };
 
 export const PageBackground = styled.div`
@@ -18,7 +19,7 @@ export const PageBackground = styled.div`
 `;
 
 export const GrayLine = styled.div`
-  background: #e5ecec;
+  background: ${colors.gray_line};
   height: 80px;
   width: 100%;
   display: flex;
@@ -28,7 +29,7 @@ export const GrayLine = styled.div`
 `;
 
 export const Header = styled.div`
-  background-color: #d0dadf;
+  background-color: ${colors.header};
   display: flex;
   margin: 20px 20px 0px 20px;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
@@ -59,7 +60,7 @@ export const StepLine = styled.div<StepLineProps>`
   width: 50px;
   height: 5px;
   background-color: ${(props: StepLineProps) =>
-    props.isDone ? '#EC0056' : '#7f9aa7'}; ;
+    props.isDone ? colors.primary_color : colors.terciary_color}; ;
 `;
 
 export const StepBottomArrow = styled.div`

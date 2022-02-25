@@ -10,12 +10,11 @@ import img2 from '../../assets/img/group-3.svg';
 import Text from '../../components/Text';
 import ContentContainer from '../../components/ContentContainer';
 import BottomButtons from '../../components/BottomButtons';
-import Checkbox from '@mui/material/Checkbox';
-import FormControlLabel from '@mui/material/FormControlLabel';
 import TextCreatePassword from '../../components/TextCreatePassword';
 import ImageCursom from '../../components/ImageCursom';
 import { BiChevronRight } from 'react-icons/bi';
 import InputCheckbox from '../../components/InputCheckbox';
+import colors from '../../styles/colors';
 function ProductInformation() {
   const { t } = useTranslation();
   const navigate = useNavigate();
@@ -93,7 +92,7 @@ function ProductInformation() {
         <BasicButton
           text={t('general.next')}
           onClick={() => handleNextPage()}
-          backgroundColor="#002B45"
+          backgroundColor={colors.secondary_color}
           color="white"
           disabled={!policyChecked}
           icon={<BiChevronRight size={20} />}

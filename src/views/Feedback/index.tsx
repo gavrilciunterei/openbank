@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import userSlice from '../../data/user';
 import { useSelector, useDispatch, RootStateOrAny } from 'react-redux';
 
-import LinearProgress from '@mui/material/LinearProgress';
 import ContentContainer from '../../components/ContentContainer';
 import { submitForm } from '../../services/api';
 import { ContainerFeedback, ContainerText } from './styles';
@@ -15,6 +14,8 @@ import BottomButtons from '../../components/BottomButtons';
 import BasicButton from '../../components/BasicButton';
 import { useTranslation } from 'react-i18next';
 import { BiChevronRight } from 'react-icons/bi';
+import Spinner from '../../components/Spinner';
+import colors from '../../styles/colors';
 
 function Feedback() {
   const navigate = useNavigate();
@@ -94,7 +95,7 @@ function Feedback() {
   return (
     <div style={{ flex: 1 }}>
       <ContentContainer>
-        {!responseApi ? <LinearProgress /> : getContentApi()}
+        {!responseApi ? <Spinner /> : getContentApi()}
       </ContentContainer>
       {responseApi && (
         <BottomButtons>
@@ -108,8 +109,8 @@ function Feedback() {
               responseApi === 200 ? handleRestartForm() : handleGoBack()
             }
             backgroundColor="transparent"
-            color="#EC0056"
-            icon={<BiChevronRight size={20} color={'#EC0056'} />}
+            color={colors.primary_color}
+            icon={<BiChevronRight size={20} color={colors.primary_color} />}
           />
         </BottomButtons>
       )}

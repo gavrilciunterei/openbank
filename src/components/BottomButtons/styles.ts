@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import colors from '../../styles/colors';
 
 export const ButtonsContainer = styled.div`
   display: flex;
@@ -7,5 +8,5 @@ export const ButtonsContainer = styled.div`
 `;
 
 export const Line = styled.hr`
-  border-top: 1px solid #f6f6f6;
+  border-top: 1px solid ${colors.separator_line};
 `;

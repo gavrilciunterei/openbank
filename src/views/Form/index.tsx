@@ -13,6 +13,7 @@ import * as Yup from 'yup';
 import InputSimple from '../../components/InputSimple';
 import { TwoInputs } from './styles';
 import { BiChevronRight } from 'react-icons/bi';
+import colors from '../../styles/colors';
 
 function Form() {
   const navigate = useNavigate();
@@ -109,7 +110,7 @@ function Form() {
                 <BasicButton
                   text={t('general.next')}
                   type={'submit'}
-                  backgroundColor="#002B45"
+                  backgroundColor={colors.secondary_color}
                   color="white"
                   icon={<BiChevronRight size={20} color={'white'} />}
                 />
