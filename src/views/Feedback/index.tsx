@@ -14,6 +14,7 @@ import ImageCursom from '../../components/ImageCursom';
 import BottomButtons from '../../components/BottomButtons';
 import BasicButton from '../../components/BasicButton';
 import { useTranslation } from 'react-i18next';
+import { BiChevronRight } from 'react-icons/bi';
 
 function Feedback() {
   const navigate = useNavigate();
@@ -44,11 +45,10 @@ function Feedback() {
           <ImageCursom src={ok} alt="ok" maxHeight="49px" maxWidth="45px" />
           <ContainerText>
             <Text fontWeight={600} size="20px">
-              ¡Tu Password Manager ya está creado!
+              {t('feedback.ok')}
             </Text>
             <Text fontWeight={200} size="15px">
-              Felicidades, tu Password Manager fue creado con éxito y ya puedes
-              acceder al panel de administración.
+              {t('feedback.ok_message')}
             </Text>
           </ContainerText>
         </ContainerFeedback>
@@ -59,11 +59,10 @@ function Feedback() {
         <ImageCursom src={alert} alt="alert" maxHeight="49px" maxWidth="45px" />
         <ContainerText>
           <Text fontWeight={600} size="20px">
-            Ha habido un error
+            {t('feedback.error')}
           </Text>
           <Text fontWeight={200} size="15px">
-            No hemos podido modificar tu Contraseña Maestra. Inténtalo más
-            tarde.
+            {t('feedback.error_message')}
           </Text>
         </ContainerText>
       </ContainerFeedback>
@@ -90,13 +89,16 @@ function Feedback() {
         <BottomButtons>
           <BasicButton
             text={
-              responseApi === 200 ? 'Acceder ⟩' : 'Volver a Password Manager'
+              responseApi === 200
+                ? t('feedback.access')
+                : t('feedback.error_goback')
             }
             onClick={() =>
               responseApi === 200 ? handleRestartForm() : navigate(-1)
             }
             backgroundColor="transparent"
-            color="black"
+            color="#EC0056"
+            icon={<BiChevronRight size={20} color={'#EC0056'} />}
           />
         </BottomButtons>
       )}

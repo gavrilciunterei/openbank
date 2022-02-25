@@ -32,5 +32,13 @@
     "insert_trak": "Introduce tu pista",
     "track_max": "La pista solo puede tener un máximo de 60 caracteres",
     "repeat_required": "Repetir la contraseña es obligatorio"
+  },
+  "feedback": {
+    "error": "Ha habido un error",
+    "error_message": "No hemos podido modificar tu Contraseña Maestra. Inténtalo más tarde.",
+    "error_goback": "Volver a Password Manager",
+    "ok": "¡Tu Password Manager ya está creado!",
+    "ok_message": "Felicidades, tu Password Manager fue creado con éxito y ya puedes acceder al panel de administración.",
+    "access": "Acceder"
   }
 }

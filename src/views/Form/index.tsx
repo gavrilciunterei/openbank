@@ -14,6 +14,7 @@ import TextField from '@mui/material/TextField';
 import * as Yup from 'yup';
 import InputSimple from '../../components/InputSimple';
 import { TwoInputs } from './styles';
+import { BiChevronRight } from 'react-icons/bi';
 
 function Form() {
   const navigate = useNavigate();
@@ -109,6 +110,7 @@ function Form() {
                   type={'submit'}
                   backgroundColor="#002B45"
                   color="white"
+                  icon={<BiChevronRight size={20} color={'white'} />}
                 />
                 <BasicButton
                   text={t('general.cancel')}
