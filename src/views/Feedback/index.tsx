@@ -11,7 +11,7 @@ import { useSelector, useDispatch, RootStateOrAny } from 'react-redux';
 
 import ContentContainer from '../../components/ContentContainer';
 import { submitForm } from '../../services/api';
-import { ContainerFeedback, ContainerText } from './styles';
+import { Container, ContainerFeedback, ContainerText } from './styles';
 import ok from '../../assets/img/ok.png';
 import alert from '../../assets/img/alert.png';
 import Text from '../../components/Text';
@@ -90,7 +90,7 @@ function Feedback() {
   };
 
   return (
-    <div style={{ flex: 1 }}>
+    <Container>
       <ContentContainer>
         {!responseApi ? <Spinner /> : getContentApi()}
       </ContentContainer>
@@ -111,7 +111,7 @@ function Feedback() {
           />
         </BottomButtons>
       )}
-    </div>
+    </Container>
   );
 }
 

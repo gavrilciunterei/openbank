@@ -14,3 +14,7 @@ export const ContainerText = styled.div`
   margin-bottom: 20px;
   flex-direction: column;
 `;
+
+export const Container = styled.div`
+  flex: 1;
+`;

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import BasicButton from '../../components/BasicButton';
-import { TextContainer, ImageContainer } from './styles';
+import { TextContainer, ImageContainer, Container } from './styles';
 import { useNavigate } from 'react-router-dom';
 import { setActivePage, setDonePage, setCheckPolicy } from '../../store/user';
 import { RootStateOrAny, useDispatch, useSelector } from 'react-redux';
@@ -15,6 +15,7 @@ import ImageCursom from '../../components/ImageCursom';
 import { BiChevronRight } from 'react-icons/bi';
 import InputCheckbox from '../../components/InputCheckbox';
 import colors from '../../styles/colors';
+
 function ProductInformation() {
   const { t } = useTranslation();
   const navigate = useNavigate();
@@ -38,7 +39,7 @@ function ProductInformation() {
   };
 
   return (
-    <div style={{ flex: 1 }}>
+    <Container>
       <TextCreatePassword />
       <ContentContainer>
         <TextContainer flexDirectionMin="column" flexDirectionMax="row">
@@ -103,7 +104,7 @@ function ProductInformation() {
           color="black"
         />
       </BottomButtons>
-    </div>
+    </Container>
   );
 }
 
