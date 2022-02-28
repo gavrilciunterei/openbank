@@ -1,46 +1,38 @@
-# Getting Started with Create React App
+# ES: Openbank
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Instalación y Documentación
 
-## Available Scripts
+## DESARROLLO
 
-In the project directory, you can run:
+En el directorio del proyecto, puede ejecutar:
 
-### `npm start`
+1. Instale el proyecto con `npm install` // `yarn install`
+2. Inicialice la aplicación con `npm run start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Información sobre la app
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+La app está envuelta por react router v6 la cual crea 3 rutas, para la home `(/)` que sería la primera pantalla de la app, `(/form)` en la cual se rellena el formulario con las contraseñas y por último `(/feedback)` para mostrar el resultado de la consulta a la API.
 
-### `npm test`
+- Para la gestión del estado, he decicido utilizar Redux con Redux Toolkit, para que veais un poco como lo utilizo. Para una app de 3 pantallas si es cierto que no haría falta y se podría usar otros metodos como useContext.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  - En todas las vistas, al entrar, se guarda que estás viendo esa pantalla para que el menú superior pueda marcar automáticamente la pantalla que estás viendo.
+  - También al finalizar de completar la información y querer pasar de pantalla (si cumples los requisitos) se guarda en que ya has finalizado esa vista y modifica el el nombre por un check.
+  - Al terminar la primera vista, se guarda en el estado que has marcado el check para así saber en la vista dos que lo has marcado y no poder entrar directamente por esa ruta.
+  - En la vista de formulario al entrar se ejecuta un useEffect el cual comprueba que ya has pasado por la pantalla uno mirando si tienes el check en el estado marcado a true. Al terminar de completar los datos, también guarda en el estado esos datos que has completado para así en la tercera pantalla saber que has pasado por ella.
+  - La tercera vista ejecuta también un useEffect el cual comprueba que has pasado por la pantalla anterior viendo si tienes esos datos guardados. Si cumples estos requisitos, hace una llamada a la “API” y devuelve la respuesta.
 
-### `npm run build`
+- El formulario está hecho con Formik y para validar los datos Yup.
+- El cambio de idioma se hizo utilizado el paquete i18next cargando el idioma por defecto la de tu navegador y al elegir otra (desde los 3 puntos de la esquina superior) la guarda en una cookie con el idioma elegido para que no se vuelva a cambiar al entrar a otra página.
+- Para el estilo se está utilizando Styled-Components.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Organización del proyecto
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- components: Componentes utilizados en la app y alguno que se ha utilizado varias veces.
+- data: Información de redux y gestión de estados.
+- locale: Configuración de las traducciones.
+- views: Pantallas de la web con sus componentes.
+- services: Llamadas a api.
+- styles: Guarda los colores usados.
+- assets: Imágenes usadas
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
