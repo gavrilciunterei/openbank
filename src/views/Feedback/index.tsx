@@ -35,7 +35,7 @@ function Feedback() {
     if (password && repeatPassword && policyChecked) {
       dispatch(setActivePage(2));
       submitForm(password, repeatPassword, track)
-        .then((res) => dispatch(setResponseApi(res.status)))
+        .then((res: any) => dispatch(setResponseApi(res.status)))
         .catch((e) => dispatch(setResponseApi(e.status)));
     } else {
       navigate('/');

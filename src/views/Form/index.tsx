@@ -80,7 +80,7 @@ function Form() {
 
   return (
     <Container>
-      <TextCreatePassword />
+      <TextCreatePassword text={t('general.create_password')} />
 
       <FormCursom
         initialValues={initialValues}

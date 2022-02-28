@@ -18,6 +18,7 @@ export default i18n
       },
     },
     fallbackLng: 'en',
+    react: { useSuspense: false },
 
     detection: {
       order: [

@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test BasicButton 1`] = `
+<button
+  className="sc-bdvvtL fUgaqB"
+  color="blue"
+  type="button"
+>
+  <div
+    className="sc-gsDKAQ hznLYe"
+  >
+    Botón de prueba
+  </div>
+</button>
+`;

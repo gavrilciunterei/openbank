@@ -40,7 +40,7 @@ function ProductInformation() {
 
   return (
     <Container>
-      <TextCreatePassword />
+      <TextCreatePassword text={t('general.create_password')} />
       <ContentContainer>
         <TextContainer flexDirectionMin="column" flexDirectionMax="row">
           <ImageContainer>

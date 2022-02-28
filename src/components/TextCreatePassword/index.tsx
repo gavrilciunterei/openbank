@@ -1,15 +1,13 @@
 import React from 'react';
 import Text from '../Text';
-import { useTranslation } from 'react-i18next';
 import { BottomLine } from './styles';
 import ContentContainer from '../ContentContainer';
-function TextCreatePassword() {
-  const { t } = useTranslation();
-
+import { TextProps } from './types';
+function TextCreatePassword({ text }: TextProps) {
   return (
     <ContentContainer>
       <Text fontWeight={500} size="30px">
-        {t('general.create_password')}
+        {text}
       </Text>
       <BottomLine />
     </ContentContainer>

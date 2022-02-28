@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test BottomButtons 1`] = `
+<div>
+  <hr
+    className="sc-dkPtRN khVdif"
+  />
+  <div
+    className="sc-bdvvtL gMSJIZ"
+  >
+    <div
+      className="sc-gsDKAQ KHewZ"
+    >
+      <div>
+        <button>
+           botón 1 
+        </button>
+        <button>
+           botón 2 
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

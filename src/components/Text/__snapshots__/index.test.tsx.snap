@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Text 1`] = `
+<p
+  className="sc-bdvvtL jHGvXH"
+  color="red"
+>
+  Hola
+</p>
+`;

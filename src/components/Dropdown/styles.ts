@@ -35,6 +35,6 @@ export const LangButton = styled.button`
   background-color: transparent;
   border: 0;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
-
   padding: 10px;
+  width: 100%;
 `;

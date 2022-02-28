@@ -8,16 +8,7 @@ import {
 import { ErrorMessage, useField } from 'formik';
 import { strengthIndicator, strengthColor } from './strength';
 import Text from '../Text';
-
-interface Props {
-  password?: boolean;
-  label: string;
-  name: string;
-  type?: 'text' | 'email' | 'password';
-  placeholder: string;
-  [x: string]: any;
-  subText?: React.ReactNode;
-}
+import { Props } from './types';
 
 function InputSimple({ label, ...props }: Props) {
   const [field, meta] = useField(props);

@@ -1,13 +1,11 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Text from './index';
+import BasicButton from './index';
 
-it('Test Text', () => {
+it('Test BasicButton', () => {
   const tree = renderer
     .create(
-      <Text font-weight={400} font-size={15} max-width={200} color="red">
-        Hola
-      </Text>
+      <BasicButton text="Botón de prueba" backgroundColor="red" color="blue" />
     )
     .toJSON();
   expect(tree).toMatchSnapshot();

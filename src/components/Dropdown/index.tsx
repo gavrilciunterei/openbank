@@ -53,10 +53,12 @@ function Dropdown() {
       {openModal && (
         <DropdownContainer>
           <LangButton onClick={() => handleChangeLanguage('es')}>
-            🇪🇸{t('general.es')}
+            🇪🇸
+            <p>{t('general.es')}</p>
           </LangButton>
           <LangButton onClick={() => handleChangeLanguage('en')}>
-            🇺🇸{t('general.en')}
+            🇺🇸
+            <p>{t('general.en')}</p>
           </LangButton>
         </DropdownContainer>
       )}

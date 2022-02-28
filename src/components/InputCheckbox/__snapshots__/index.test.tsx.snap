@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test InputCheckbox 1`] = `
+<label>
+  <input
+    checked={false}
+    name="Check"
+    onChange={[Function]}
+    type="checkbox"
+  />
+  Prueba checkbox
+</label>
+`;
