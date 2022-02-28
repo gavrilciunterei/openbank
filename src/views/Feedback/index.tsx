@@ -6,7 +6,7 @@ import {
   setDonePage,
   cleanData,
   resetPassword,
-} from '../../data/user';
+} from '../../store/user';
 import { useSelector, useDispatch, RootStateOrAny } from 'react-redux';
 
 import ContentContainer from '../../components/ContentContainer';

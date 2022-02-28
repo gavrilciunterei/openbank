@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import BasicButton from '../../components/BasicButton';
 import { TextContainer, ImageContainer } from './styles';
 import { useNavigate } from 'react-router-dom';
-import { setActivePage, setDonePage, setCheckPolicy } from '../../data/user';
+import { setActivePage, setDonePage, setCheckPolicy } from '../../store/user';
 import { RootStateOrAny, useDispatch, useSelector } from 'react-redux';
 import img1 from '../../assets/img/group.svg';
 import img2 from '../../assets/img/group-3.svg';

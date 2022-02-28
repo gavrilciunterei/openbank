@@ -6,7 +6,7 @@ import {
   setDonePage,
   setPassword,
   cleanData,
-} from '../../data/user';
+} from '../../store/user';
 import { useSelector, useDispatch, RootStateOrAny } from 'react-redux';
 import BasicButton from '../../components/BasicButton';
 import ContentContainer from '../../components/ContentContainer';
@@ -117,6 +117,7 @@ function Form() {
               </ContentContainer>
               <BottomButtons>
                 <BasicButton
+                  disabled={!(formik.isValid && formik.dirty)}
                   text={t('general.next')}
                   type={'submit'}
                   backgroundColor={colors.secondary_color}

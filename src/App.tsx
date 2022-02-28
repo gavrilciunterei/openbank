@@ -4,7 +4,7 @@ import ProductInformation from './views/ProductInformation';
 import Form from './views/Form';
 import Feedback from './views/Feedback';
 import { Provider } from 'react-redux';
-import store from './data/rootStore';
+import store from './store/rootStore';
 import './locale/index';
 import Background from './components/Background';
 

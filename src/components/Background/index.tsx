@@ -11,7 +11,7 @@ import {
 } from './styles';
 import { BackgroundProps } from './types';
 import { RootStateOrAny, useSelector } from 'react-redux';
-import { Page } from '../../data/user/types';
+import { Page } from '../../store/user/types';
 import Dropdown from '../Dropdown';
 function Background({ children }: BackgroundProps) {
   const { activePage, pages } = useSelector(
