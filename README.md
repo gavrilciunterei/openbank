@@ -84,4 +84,5 @@ The app is wrapped by react router v6 which creates 3 routes, for the home `(/)`
 # Testing
 
 - For testing we have used: Jest and Testing Library. Only static components have been tested with Snapshots.
+
 ![](https://github.com/gavrilciunterei/openbank/blob/master/src/assets/img/tests.png?raw=true)
