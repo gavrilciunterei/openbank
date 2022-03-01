@@ -1,22 +1,39 @@
 /* eslint-disable testing-library/no-wait-for-side-effects */
 import Form from './index';
-import { MemoryRouter } from 'react-router';
 
-import store from '../../store/rootStore';
-import { Provider } from 'react-redux';
-import renderer from 'react-test-renderer';
 import '../../locale/index';
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import { screen, fireEvent, waitFor } from '@testing-library/react';
 
-test('Render ProductInformation', async () => {
-  render(
-    <MemoryRouter>
-      <Provider store={store}>
-        <Form />
-      </Provider>
-    </MemoryRouter>
-  );
+import { render } from '../../utils/test-utils';
+import { configureStore } from '@reduxjs/toolkit';
+import userReducer from '../../store/rootReducer';
+
+const initialState200 = {
+  user: {
+    activePage: 0,
+    policyChecked: true,
+    pages: [
+      {
+        done: false,
+        text: '1',
+      },
+      {
+        done: false,
+        text: '2',
+      },
+      {
+        done: false,
+        text: '3',
+      },
+    ],
+    password: 'Hola12345',
+    repeatPassword: 'Hola12345',
+    track: '',
+    responseApi: null,
+  },
+};
+test('Render Form enter passwords', async () => {
+  render(<Form />);
 
   const password = screen.getByPlaceholderText('Enter your password');
   const repeatPassword = screen.getByPlaceholderText('Repeat your password');
@@ -30,5 +47,17 @@ test('Render ProductInformation', async () => {
 
     const buttonCancel = screen.getByText('Cancel');
     fireEvent.click(buttonCancel);
+  });
+});
+
+test('Render Form when go back from feedback', async () => {
+  const store = configureStore({
+    reducer: userReducer,
+    preloadedState: initialState200,
+  });
+
+  render(<Form />, {
+    initialState200,
+    store,
   });
 });

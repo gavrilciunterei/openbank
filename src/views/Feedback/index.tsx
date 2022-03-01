@@ -40,7 +40,7 @@ function Feedback() {
     } else {
       navigate('/');
     }
-  }, []);
+  }, [dispatch, password, repeatPassword, policyChecked, track]);
 
   const getContentApi = () => {
     if (responseApi === 200) {
