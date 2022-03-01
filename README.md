@@ -35,6 +35,13 @@ La app está envuelta por react router v6 la cual crea 3 rutas, para la home `(/
 - styles: Guarda los colores usados.
 - assets: Imágenes usadas
 
+# Testing
+
+- Para el testing se ha utilizado: Jest y Testing Library. Solo los componentes estáticos se han probado con Snapshots.
+![](https://github.com/gavrilciunterei/openbank/blob/master/src/assets/img/tests.png?raw=true)
+
+
+
 ---
 
 # EN: Openbank
@@ -73,3 +80,8 @@ The app is wrapped by react router v6 which creates 3 routes, for the home `(/)`
 - services: API calls.
 - styles: Saves the colors used.
 - assets: Images used
+
+# Testing
+
+- For testing we have used: Jest and Testing Library. Only static components have been tested with Snapshots.
+![](https://github.com/gavrilciunterei/openbank/blob/master/src/assets/img/tests.png?raw=true)
