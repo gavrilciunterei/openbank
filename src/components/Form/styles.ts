@@ -10,7 +10,3 @@ export const TwoInputs = styled.div`
     flex-direction: row;
   }
 `;
-
-export const Container = styled.div`
-  flex: 1;
-`;

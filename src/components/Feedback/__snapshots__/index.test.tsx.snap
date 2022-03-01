@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test ContentApiAlert 1`] = `
+<div
+  className="sc-dkPtRN caoUfH"
+>
+  <img
+    alt="ok"
+    className="sc-bdvvtL enDcEG"
+    src="ok.png"
+  />
+  <div
+    className="sc-hKwDye fghVmB"
+  >
+    <p
+      className="sc-gsDKAQ dJvuXc"
+      fontWeight={600}
+      size="20px"
+    >
+      Your Password Manager has been created!
+    </p>
+    <p
+      className="sc-gsDKAQ jNqgVO"
+      fontWeight={200}
+      size="15px"
+    >
+      Congratulations, your Password Manager was successfully created and you can now access the administration panel.
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Test ContentApiOk 1`] = `
+<div
+  className="sc-dkPtRN caoUfH"
+>
+  <img
+    alt="ok"
+    className="sc-bdvvtL enDcEG"
+    src="ok.png"
+  />
+  <div
+    className="sc-hKwDye fghVmB"
+  >
+    <p
+      className="sc-gsDKAQ dJvuXc"
+      fontWeight={600}
+      size="20px"
+    >
+      Your Password Manager has been created!
+    </p>
+    <p
+      className="sc-gsDKAQ jNqgVO"
+      fontWeight={200}
+      size="15px"
+    >
+      Congratulations, your Password Manager was successfully created and you can now access the administration panel.
+    </p>
+  </div>
+</div>
+`;

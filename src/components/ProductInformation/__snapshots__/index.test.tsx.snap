@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test FirstInfo 1`] = `
+<div
+  className="sc-bdvvtL dRonou"
+>
+  <div
+    className="sc-gsDKAQ iCkZym"
+  >
+    <img
+      alt="img1"
+      className="sc-dkPtRN iMZzcL"
+      src="group.svg"
+    />
+    <p
+      className="sc-hKwDye bgBOwh"
+    >
+      Store all your passwords, data or any information here, forget paper notes and unprotected applications.
+    </p>
+  </div>
+  <div
+    className="sc-gsDKAQ iCkZym"
+  >
+    <img
+      alt="img2"
+      className="sc-dkPtRN iMZzcL"
+      src="group-3.svg"
+    />
+    <p
+      className="sc-hKwDye bgBOwh"
+    >
+      Create your master key: only you can access your secrets with it.
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Test SecoundInfo 1`] = `
+Array [
+  <div
+    className="sc-bdvvtL cYfyVu"
+  >
+    <p
+      className="sc-hKwDye lhQqIX"
+      fontWeight={500}
+      size="18px"
+    >
+      How does it work
+    </p>
+    <p
+      className="sc-hKwDye gdvmyK"
+    >
+       
+      First of all, you need to create a different password for your electronic belongings. You will not be able to recover your password, so remember it well.
+    </p>
+  </div>,
+  <div
+    className="sc-bdvvtL cYfyVu"
+  >
+    <p
+      className="sc-hKwDye lhQqIX"
+      fontWeight={500}
+      size="18px"
+    >
+      What data can you save
+    </p>
+    <p
+      className="sc-hKwDye gdvmyK"
+    >
+       
+      For example, your card number, the PIN and PUK of your mobile phone, the serial number of one of your devices or any information you need to have in a safe place.
+    </p>
+  </div>,
+]
+`;

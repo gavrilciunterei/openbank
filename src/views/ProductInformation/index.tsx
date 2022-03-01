@@ -1,20 +1,18 @@
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import BasicButton from '../../components/BasicButton';
-import { TextContainer, ImageContainer, Container } from './styles';
 import { useNavigate } from 'react-router-dom';
 import { setActivePage, setDonePage, setCheckPolicy } from '../../store/user';
 import { RootStateOrAny, useDispatch, useSelector } from 'react-redux';
-import img1 from '../../assets/img/group.svg';
-import img2 from '../../assets/img/group-3.svg';
-import Text from '../../components/Text';
+
 import ContentContainer from '../../components/ContentContainer';
 import BottomButtons from '../../components/BottomButtons';
 import TextCreatePassword from '../../components/TextCreatePassword';
-import ImageCursom from '../../components/ImageCursom';
 import { BiChevronRight } from 'react-icons/bi';
 import InputCheckbox from '../../components/InputCheckbox';
 import colors from '../../styles/colors';
+import { FirstInfo, SecoundInfo } from '../../components/ProductInformation';
+import { Container } from '../../components/FlexContainer/styles';
 
 function ProductInformation() {
   const { t } = useTranslation();
@@ -23,17 +21,19 @@ function ProductInformation() {
 
   const { policyChecked } = useSelector((state: RootStateOrAny) => state.user);
 
+  // Execute one time and update state to show active page 0 and done to false
   useEffect(() => {
-    // No olvidar de limpiar estados(por si le da a la flecha del navegador adelante y atras no le salga que ok y le lleve a home)
     dispatch(setDonePage({ done: false, page: 0 }));
     dispatch(setActivePage(0));
   }, []);
 
+  // Called when press next button, Update state and set the first page done then navigate to 'form'
   const handleNextPage = () => {
     dispatch(setDonePage({ done: true, page: 0 }));
     navigate('/form');
   };
 
+  // Update state and set policy to true or false
   const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(setCheckPolicy(event.target.checked));
   };
@@ -42,45 +42,8 @@ function ProductInformation() {
     <Container>
       <TextCreatePassword text={t('general.create_password')} />
       <ContentContainer>
-        <TextContainer flexDirectionMin="column" flexDirectionMax="row">
-          <ImageContainer>
-            <ImageCursom
-              src={img1}
-              alt="img1"
-              maxHeight="150px"
-              maxWidth="150px"
-            />
-            <Text maxWidth="300px">
-              {t('product_information.text_save_password')}
-            </Text>
-          </ImageContainer>
-          <ImageContainer>
-            <ImageCursom
-              src={img2}
-              alt="img2"
-              maxHeight="150px"
-              maxWidth="150px"
-            />
-            <Text maxWidth="300px">
-              {t('product_information.text_master_password')}
-            </Text>
-          </ImageContainer>
-        </TextContainer>
-
-        <TextContainer flexDirectionMin="column" flexDirectionMax="column">
-          <Text fontWeight={500} size="18px">
-            {t('product_information.how_does_word')}
-          </Text>
-          <Text> {t('product_information.text_first_place')}</Text>
-        </TextContainer>
-
-        <TextContainer flexDirectionMin="column" flexDirectionMax="column">
-          <Text fontWeight={500} size="18px">
-            {t('product_information.what_data_save')}
-          </Text>
-          <Text> {t('product_information.text_what_data_save')}</Text>
-        </TextContainer>
-
+        <FirstInfo />
+        <SecoundInfo />
         <InputCheckbox
           name="isGoing"
           checked={policyChecked}

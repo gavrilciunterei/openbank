@@ -15,12 +15,17 @@ import TextCreatePassword from '../../components/TextCreatePassword';
 import BottomButtons from '../../components/BottomButtons';
 import { Form as FormFormik, FormikValues } from 'formik';
 import * as Yup from 'yup';
-import InputSimple from '../../components/InputSimple';
-import { TwoInputs, Container } from './styles';
+import { Container } from '../../components/FlexContainer/styles';
 import { BiChevronRight } from 'react-icons/bi';
 import colors from '../../styles/colors';
 import FormCursom from '../../components/FormCursom';
 import { FormikPropss } from './types';
+import {
+  FirstInfo,
+  initialValues,
+  PasswordInputs,
+  TrackInput,
+} from '../../components/Form/';
 
 const MAX_TRACK = 60;
 
@@ -34,6 +39,7 @@ function Form() {
     (state: RootStateOrAny) => state.user
   );
 
+  // When enter to page, check if come from feedback, if true set this page active and if not reset form and navigate to start page
   useEffect(() => {
     if (policyChecked && responseApi !== 200) {
       // No olvidar de limpiar estados(por si le da a la flecha del navegador adelante y atras no le salga que ok y le lleve a home)
@@ -44,22 +50,26 @@ function Form() {
     }
   }, []);
 
-  const handleNextPage = () => {
-    dispatch(setDonePage({ done: true, page: 1 }));
-    navigate('/feedback');
-  };
-
+  // Reset redux data to inicial and navigate to start page
   const handleRestartForm = () => {
     dispatch(cleanData());
     navigate('/');
   };
 
+  // Set the page state in done and change to 'feedback'
+  const handleNextPage = () => {
+    dispatch(setDonePage({ done: true, page: 1 }));
+    navigate('/feedback');
+  };
+
+  // Get data from formik and set it in state, then change the page
   const handleOnSumbit = (values: FormikValues) => {
     const { password, repeatPassword, track } = values;
     dispatch(setPassword({ password, repeatPassword, track }));
     handleNextPage();
   };
 
+  // Yup validate inputs data
   const schema = Yup.object({
     password: Yup.string()
       .required(t('form.no_password'))
@@ -71,12 +81,6 @@ function Form() {
       .oneOf([Yup.ref('password'), null], t('form.password_match')),
     track: Yup.string().optional().max(MAX_TRACK, t('form.track_max')),
   });
-
-  const initialValues = {
-    password: '',
-    repeatPassword: '',
-    track: '',
-  };
 
   return (
     <Container>
@@ -90,39 +94,12 @@ function Form() {
         {(formik: FormikPropss) => (
           <FormFormik>
             <ContentContainer>
-              <Text>
-                {t('form.first_step')} <br /> {t('form.first_step_secound')}
-              </Text>
-              <TwoInputs>
-                <InputSimple
-                  label={t('form.create_master_pass')}
-                  name="password"
-                  placeholder={t('form.write_password')}
-                  type="password"
-                  password={true}
-                />
-                <InputSimple
-                  label={t('form.repeat_master_password')}
-                  name="repeatPassword"
-                  placeholder={t('form.repeat_password')}
-                  type="password"
-                />
-              </TwoInputs>
-
+              <FirstInfo />
+              <PasswordInputs />
               <Text>{t('form.secound_step')}</Text>
-
-              <InputSimple
-                label={t('form.create_track')}
-                name="track"
-                placeholder={t('form.insert_trak')}
-                type="text"
-                subText={
-                  <Text size="15px">
-                    {formik.values.track.length + '/' + MAX_TRACK}
-                  </Text>
-                }
-              />
+              <TrackInput track={formik.values.track} />
             </ContentContainer>
+
             <BottomButtons>
               <BasicButton
                 disabled={!(formik.isValid && formik.dirty)}

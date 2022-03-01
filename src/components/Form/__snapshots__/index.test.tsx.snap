@@ -1,0 +1,111 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test FirstInfo 1`] = `
+<p
+  className="sc-bdvvtL Dmhlk"
+>
+  First of all, you need to create a different password for your electronic belongings.
+   
+  <br />
+   
+  You will not be able to recover your password, so remember it well.
+</p>
+`;
+
+exports[`Test PasswordInputs 1`] = `
+<div
+  className="sc-gsDKAQ dEHTMK"
+>
+  <div
+    className="sc-dkPtRN ezaTDN"
+  >
+    <label
+      className="sc-hKwDye kGBjRm"
+      htmlFor="password"
+    >
+      Create your Master Password
+    </label>
+    <input
+      className="sc-eCImPb hcxgtq text-input"
+      color="green"
+      name="password"
+      onBlur={[Function]}
+      onChange={[Function]}
+      placeholder="Enter your password"
+      type="password"
+      value="Contrasena1234"
+    />
+    <p
+      className="sc-bdvvtL kncIRR"
+      color="red"
+      fontWeight={300}
+      size="13px"
+    />
+  </div>
+  <div
+    className="sc-dkPtRN ezaTDN"
+  >
+    <label
+      className="sc-hKwDye kGBjRm"
+      htmlFor="repeatPassword"
+    >
+      Repeat your Master Password
+    </label>
+    <input
+      className="sc-eCImPb ihCCYs text-input"
+      color=""
+      name="repeatPassword"
+      onBlur={[Function]}
+      onChange={[Function]}
+      placeholder="Repeat your password"
+      type="password"
+      value="Contrasena1234"
+    />
+    <p
+      className="sc-bdvvtL kncIRR"
+      color="red"
+      fontWeight={300}
+      size="13px"
+    />
+  </div>
+</div>
+`;
+
+exports[`Test TrackInput 1`] = `
+<div
+  className="sc-dkPtRN ezaTDN"
+>
+  <label
+    className="sc-hKwDye kGBjRm"
+    htmlFor="track"
+  >
+    Create your hint to remember your password (optional)
+  </label>
+  <input
+    className="sc-eCImPb ihCCYs text-input"
+    color=""
+    name="track"
+    onBlur={[Function]}
+    onChange={[Function]}
+    placeholder="Enter your hint"
+    type="text"
+    value="Pruebaaa"
+  />
+  <div
+    className="sc-jRQBWg izTmiO"
+  >
+    <p
+      className="sc-bdvvtL ghwPlo"
+      size="15px"
+    >
+      4/60
+    </p>
+  </div>
+  <p
+    className="sc-bdvvtL kncIRR"
+    color="red"
+    fontWeight={300}
+    size="13px"
+  />
+</div>
+`;

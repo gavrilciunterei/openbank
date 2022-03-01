@@ -21,7 +21,3 @@ export const ImageContainer = styled.div`
   width: 100%;
   margin-right: 10px;
 `;
-
-export const Container = styled.div`
-  flex: 1;
-`;
